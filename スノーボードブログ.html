@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carving Bible 30 | 伝説のカービングボード完全解説</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --base-white: #fdfeff;
+            --main-blue: #00b4d8;
+            --accent-orange: #ff9f1c;
+            --text-dark: #1a1c2c;
+            --price-red: #d90429;
+            --img-placeholder: #111;
+        }
+
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background-color: #f0f4f8; color: var(--text-dark); }
+        header { background: linear-gradient(135deg, #0077b6, #00b4d8); color: white; padding: 5rem 1rem; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+        /* ナビゲーション */
+        .toc {
+            background: white; border-radius: 20px; padding: 1.5rem;
+            position: sticky; top: 10px; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: -2rem auto 3rem;
+        }
+        .toc a { text-decoration: none; font-weight: bold; color: var(--main-blue); padding: 0.5rem 1.2rem; border-radius: 50px; border: 2px solid var(--main-blue); transition: 0.3s; font-size: 0.9rem; }
+        .toc a:hover { background: var(--main-blue); color: white; }
+
+        .brand-section { margin-bottom: 6rem; scroll-margin-top: 100px; }
+        .brand-header { font-size: 2.2rem; text-align: center; margin-bottom: 2rem; color: var(--main-blue); display: flex; align-items: center; justify-content: center; gap: 15px; }
+        .brand-header::before, .brand-header::after { content: ""; flex: 1; height: 2px; background: #ddd; }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
+
+        .card { background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; transition: all 0.3s ease; border: 1px solid #eef; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+
+        /* 画像スロットの強化 */
+        .card-image-slot { width: 100%; height: 220px; background-color: var(--img-placeholder); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+        .card-image-slot img { width: 100%; height: 100%; object-fit: contain; padding: 10px; transition: transform 0.5s ease; }
+        .card:hover .card-image-slot img { transform: scale(1.1); }
+        .no-image-text { color: #444; font-size: 0.7rem; letter-spacing: 2px; position: absolute; opacity: 0.5; z-index: 1; }
+
+        .card-header { padding: 1.5rem; background: #f8fbff; border-bottom: 2px solid #f0f4f8; }
+        .card-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 5px; color: #333; }
+        .price { color: var(--price-red); font-size: 0.95rem; font-weight: bold; }
+
+        .card-body { padding: 1.5rem; flex-grow: 1; }
+        .explanation { font-size: 0.95rem; color: #444; margin-bottom: 1.2rem; line-height: 1.8; }
+
+        .status-box { background: #fffcf0; padding: 1rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid #ffeeba; }
+        .status-row { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px; }
+        .stars { color: #fcc419; font-weight: bold; letter-spacing: 2px; }
+
+        .user-voice { background: #f0f7ff; padding: 1.2rem; border-radius: 12px; position: relative; font-size: 0.85rem; color: #555; font-style: italic; line-height: 1.5; }
+
+        .shop-btns { display: flex; flex-direction: column; gap: 12px; padding: 1.5rem; background: #ffffff; border-top: 1px solid #f1f4f8; }
+        .btn { display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box; padding: 1rem 1.5rem; border-radius: 14px; text-decoration: none; font-weight: bold; font-size: 1rem; color: white; transition: all 0.2s ease; box-shadow: 0 4px 0 rgba(0,0,0,0.1); }
+        .rakuten { background: #bf0000; border: 1px solid #a00000; }
+        .amazon { background: #232f3e; border: 1px solid #131a22; }
+        .yahoo { background: #ff0033; border: 1px solid #cc0029; }
+        .btn:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0,0,0,0.15); }
+        .btn span::after { content: " →"; font-size: 1.1rem; opacity: 0.7; }
+
+        footer { text-align: center; padding: 5rem 1rem; background: var(--text-dark); color: white; margin-top: 5rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">🏂 CARVING SELECTION 30</h1>
+        <p>伝説のスノーボーダー、小林隼人が贈る、2025年最新カービングボード徹底解説</p>
+    </div>
+</header>
+
+<div class="container">
+    <nav class="toc">
+        <a href="#ogasaka">OGASAKA</a><a href="#yonex">YONEX</a><a href="#bcstream">BC STREAM</a>
+        <a href="#moss">MOSS</a><a href="#gray">GRAY</a><a href="#burton">BURTON</a>
+    </nav>
+    <div id="blog-content"></div>
+</div>
+
+<footer><p>© 2025 Carving Selection 30</p></footer>
+
+<script>
+// 【ここを編集！】 img: "" の中に写真のURLを入れてください
+const boardData = {
+    ogasaka: {
+        title: "OGASAKA (オガサカ)",
+        items: [
+            {n:"CT (Comfort Turn)", img:"https://item-shopping.c.yimg.jp/i/n/northern-l_ogasaka-ct26", p:"¥94,600", e:"カービングの基礎を学ぶならこの一本。独自の芯材が『自動で曲がる』ような感覚を演出します。", c:5, g:3, pk:2, v:"『あ、私上手くなったかも？』と思わせてくれる魔法の板です。", la:"https://www.amazon.co.jp/s?k=OGASAKA+CT", lr:"https://search.rakuten.co.jp/search/mall/OGASAKA+CT/", ly:"https://shopping.yahoo.co.jp/search?p=OGASAKA+CT"},
+            {n:"FC (Full Carve)", img:"https://tshop.r10s.jp/clubits/cabinet/11546246/imgrc0131830316.jpg?fitin=275:275", p:"¥103,400", e:"セミハンマーヘッド形状で、エッジの有効長が長く、深いターンでもズレない安定感があります。", c:5, g:1, pk:1, v:"雪面にレールを敷いたように滑れます。カービング特化なら絶対これ。", la:"https://www.amazon.co.jp/s?k=OGASAKA+FC", lr:"https://search.rakuten.co.jp/search/mall/OGASAKA+FC/", ly:"https://shopping.yahoo.co.jp/search?p=OGASAKA+FC"},
+            {n:"FC-S (Full Carve Stiff)", img:"https://tshop.r10s.jp/auc-hood-inc/cabinet/image64/ogasaka25001-1.jpg?fitin=275:275", p:"¥105,600", e:"FCをさらに硬く、ハイスピード向けに調整。テクニカル選手権などを目指す層に絶大な支持。", c:5, g:1, pk:1, v:"脚力は必要ですが、高速域での安心感は世界一。", la:"https://www.amazon.co.jp/s?k=OGASAKA+FC-S", lr:"https://search.rakuten.co.jp/search/mall/OGASAKA+FC-S/", ly:"https://shopping.yahoo.co.jp/search?p=OGASAKA+FC-S"},
+            {n:"ORCA", img:"", p:"¥107,800", e:"足のサイズが大きい人や、極限まで板を立てたい人向けのワイドボード。ドラグリ知らずの快感。", c:5, g:2, pk:2, v:"太いのに驚くほど動く。角付けしてもブーツが雪面に当たらない！", la:"https://www.amazon.co.jp/s?k=OGASAKA+ORCA", lr:"https://search.rakuten.co.jp/search/mall/OGASAKA+ORCA/", ly:"https://shopping.yahoo.co.jp/search?p=OGASAKA+ORCA"},
+            {n:"XC", img:"", p:"¥121,000", e:"最速を追求した競技志向モデル。アルペンボードのような強烈なグリップと走りが魅力。", c:5, g:1, pk:1, v:"スピードが上がれば上がるほど安定する。まさに戦闘機。", la:"https://www.amazon.co.jp/s?k=OGASAKA+XC", lr:"https://search.rakuten.co.jp/search/mall/OGASAKA+XC/", ly:"https://shopping.yahoo.co.jp/search?p=OGASAKA+XC"}
+        ]
+    },
+    yonex: {
+        title: "YONEX (ヨネックス)",
+        items: [
+            {n:"SYMARC", img:"", p:"¥110,000", e:"カーボン技術の結晶。圧倒的な軽さと、不快な振動を一切排除する吸い付きが特徴。", c:5, g:1, pk:1, v:"アイスバーンでもエッジが抜けない。カーボンってすごい。", la:"https://www.amazon.co.jp/s?k=YONEX+SYMARC", lr:"https://search.rakuten.co.jp/search/mall/YONEX+SYMARC/", ly:"https://shopping.yahoo.co.jp/search?p=YONEX+SYMARC"},
+            {n:"THRUST", img:"", p:"¥120,000", e:"メタルパーツを配置し、高速安定性を極限まで高めたモデル。荒れた雪面でも突破します。", c:5, g:1, pk:1, v:"時速80km超えてもバタつかない。とにかく速い。", la:"https://www.amazon.co.jp/s?k=YONEX+THRUST", lr:"https://search.rakuten.co.jp/search/mall/YONEX+THRUST/", ly:"https://shopping.yahoo.co.jp/search?p=YONEX+THRUST"},
+            {n:"SYMARC MG", img:"", p:"¥143,000", e:"マグネシウムを配合し、メタル以上の安定感とカーボンの軽さを両立。最高峰の一本。", c:5, g:1, pk:1, v:"お値段は張りますが、それに見合う価値のある究極のキレ。", la:"https://www.amazon.co.jp/s?k=YONEX+SYMARC+MG", lr:"https://search.rakuten.co.jp/search/mall/YONEX+SYMARC+MG/", ly:"https://shopping.yahoo.co.jp/search?p=YONEX+SYMARC+MG"},
+            {n:"SMOOTH", img:"", p:"¥99,000", e:"ヨネックスの看板モデル。カービングだけでなく、あらゆる地形で高い性能を発揮。", c:4, g:3, pk:4, v:"癖がなくて本当に使いやすい。何でもできる相棒です。", la:"https://www.amazon.co.jp/s?k=YONEX+SMOOTH", lr:"https://search.rakuten.co.jp/search/mall/YONEX+SMOOTH/", ly:"https://shopping.yahoo.co.jp/search?p=YONEX+SMOOTH"},
+            {n:"REV", img:"", p:"¥107,800", e:"非常に高い反発力を持つ。カービング中の加速と、ジャンプへの移行がスムーズ。", c:4, g:2, pk:5, v:"ハイスピードで飛んで回れる。攻めたい人向け。", la:"https://www.amazon.co.jp/s?k=YONEX+REV", lr:"https://search.rakuten.co.jp/search/mall/YONEX+REV/", ly:"https://shopping.yahoo.co.jp/search?p=YONEX+REV"}
+        ]
+    },
+    bcstream: {
+        title: "BC STREAM (ビーシーストリーム)",
+        items: [
+            {n:"S (Standard)", img:"", p:"¥102,300", e:"国産ボードの至宝。乗り手の意思を100%伝える操作性の高さが魅力。", c:5, g:3, pk:2, v:"板がしなる感覚が分かりやすく、カービングが楽しくなる。", la:"https://www.amazon.co.jp/s?k=BC+STREAM+S", lr:"https://search.rakuten.co.jp/search/mall/BC+STREAM+S/", ly:"https://shopping.yahoo.co.jp/search?p=BC+STREAM+S"},
+            {n:"R-2", img:"", p:"¥105,600", e:"ハンマーヘッドの草分け的存在。長い有効エッジで、深い弧を描くターンが得意。", c:5, g:1, pk:1, v:"とにかく切れる。深く倒し込んでも裏切らないエッジ力。", la:"https://www.amazon.co.jp/s?k=BC+STREAM+R-2", lr:"https://search.rakuten.co.jp/search/mall/BC+STREAM+R-2/", ly:"https://shopping.yahoo.co.jp/search?p=BC+STREAM+R-2"},
+            {n:"DR (Diver's Rocker)", img:"", p:"¥104,500", e:"独特の形状で、パウダーでの浮力とカービングのキレを両立。ラントリ勢にも大人気。", c:5, g:3, pk:1, v:"見た目からは想像できないほどカービングが気持ちいい板。", la:"https://www.amazon.co.jp/s?k=BC+STREAM+DR", lr:"https://search.rakuten.co.jp/search/mall/BC+STREAM+DR/", ly:"https://shopping.yahoo.co.jp/search?p=BC+STREAM+DR"},
+            {n:"H", img:"", p:"¥107,800", e:"メタルなしでも強い。独自の芯材バランスで、力強いカービングを実現します。", c:5, g:2, pk:2, v:"メタルの重さが苦手な人でも、これならガシガシ攻められる。", la:"https://www.amazon.co.jp/s?k=BC+STREAM+H", lr:"https://search.rakuten.co.jp/search/mall/BC+STREAM+H/", ly:"https://shopping.yahoo.co.jp/search?p=BC+STREAM+H"},
+            {n:"RX", img:"", p:"¥115,500", e:"超高速でのロングターンに特化。テク選のロング種目で勝つための設計です。", c:5, g:1, pk:1, v:"高速でのエッジのホールド感が半端じゃない。", la:"https://www.amazon.co.jp/s?k=BC+STREAM+RX", lr:"https://search.rakuten.co.jp/search/mall/BC+STREAM+RX/", ly:"https://shopping.yahoo.co.jp/search?p=BC+STREAM+RX"}
+        ]
+    },
+    moss: {
+        title: "MOSS (モス)",
+        items: [
+            {n:"Twister", img:"", p:"¥118,800", e:"メタル搭載のハンマーヘッド。雪面に吸い付きかのようなグリップは、一度乗ると病みつきに。", c:5, g:1, pk:1, v:"これぞメタルの安定感。硬いバーンを切り裂くのが快感。", la:"https://www.amazon.co.jp/s?k=MOSS+Twister", lr:"https://search.rakuten.co.jp/search/mall/MOSS+Twister/", ly:"https://shopping.yahoo.co.jp/search?p=MOSS+Twister"},
+            {n:"Revolver", img:"", p:"¥104,500", e:"セミハンマーの王道。テクニカルを目指す人たちが必ず通る、練習に最適な一本。", c:5, g:2, pk:2, v:"基礎を固めるのに最高。板が正しい乗り方を教えてくれる。", la:"https://www.amazon.co.jp/s?k=MOSS+Revolver", lr:"https://search.rakuten.co.jp/search/mall/MOSS+Revolver/", ly:"https://shopping.yahoo.co.jp/search?p=MOSS+Revolver"},
+            {n:"King", img:"", p:"¥115,500", e:"モスの象徴。全ての地形、全ての雪質で最高ランクのパフォーマンスを発揮します。", c:5, g:2, pk:3, v:"どんな状況でもこれ一本あれば安心。カービングも一級品。", la:"https://www.amazon.co.jp/s?k=MOSS+King", lr:"https://search.rakuten.co.jp/search/mall/MOSS+King/", ly:"https://shopping.yahoo.co.jp/search?p=MOSS+King"},
+            {n:"Majest", img:"", p:"¥140,800", e:"究極の素材を投入したフラッグシップ。至高のカービング体験を求める人へ。", c:5, g:1, pk:1, v:"乗り心地の高級感がすごい。別次元のキレ味です。", la:"https://www.amazon.co.jp/s?k=MOSS+Majest", lr:"https://search.rakuten.co.jp/search/mall/MOSS+Majest/", ly:"https://shopping.yahoo.co.jp/search?p=MOSS+Majest"},
+            {n:"RR (Revolver RR)", img:"", p:"¥107,800", e:"リボルバーのダブルキャンバー版。カービング性能を維持しつつ、ラントリの動きも追求。", c:4, g:4, pk:2, v:"カービングもグラトリもどっちもやりたい欲張りな私にピッタリ。", la:"https://www.amazon.co.jp/s?k=MOSS+RR", lr:"https://search.rakuten.co.jp/search/mall/MOSS+RR/", ly:"https://shopping.yahoo.co.jp/search?p=MOSS+RR"}
+        ]
+    },
+    gray: {
+        title: "GRAY (グレイ)",
+        items: [
+            {n:"Desperado", img:"", p:"¥108,900", e:"ハンマーヘッドといえばこれ。独自のサイドカーブが深いターンを誘発します。", c:5, g:1, pk:1, v:"勝手に板が回ってくれる。カービングが一番楽しくなる板。", la:"https://www.amazon.co.jp/s?k=GRAY+Desperado", lr:"https://search.rakuten.co.jp/search/mall/GRAY+Desperado/", ly:"https://shopping.yahoo.co.jp/search?p=GRAY+Desperado"},
+            {n:"Desperado Ti", img:"", p:"¥130,900", e:"デスペラードにメタル(チタナール)を採用。爆速でも安定する、まさに重戦車。", c:5, g:1, pk:1, v:"メタルの恩恵。荒れたバーンでも全く跳ねない安定感。", la:"https://www.amazon.co.jp/s?k=GRAY+Desperado+Ti", lr:"https://search.rakuten.co.jp/search/mall/GRAY+Desperado+Ti/", ly:"https://shopping.yahoo.co.jp/search?p=GRAY+Desperado+Ti"},
+            {n:"Mach", img:"", p:"¥130,900", e:"カービング×ラントリの最高峰。カーボン配合で、キレと反発が凄まじい。", c:5, g:4, pk:2, v:"滑りながらトリックを入れる動きが劇的にやりやすくなった。", la:"https://www.amazon.co.jp/s?k=GRAY+Mach", lr:"https://search.rakuten.co.jp/search/mall/GRAY+Mach/", ly:"https://shopping.yahoo.co.jp/search?p=GRAY+Mach"},
+            {n:"Tycoon", img:"", p:"¥145,200", e:"競技用アルペンボードのノウハウを詰め込んだフリースタイルボード。最速の称号。", c:5, g:1, pk:1, v:"ガチ勢向け。これより速い板はなかなか無いです。", la:"https://www.amazon.co.jp/s?k=GRAY+Tycoon", lr:"https://search.rakuten.co.jp/search/mall/GRAY+Tycoon/", ly:"https://shopping.yahoo.co.jp/search?p=GRAY+Tycoon"},
+            {n:"Force", img:"", p:"¥118,800", e:"テクニカル競技向けの本格派。強いエッジグリップと高い反発を両立。", c:5, g:2, pk:2, v:"ターン後半の加速が気持ちよすぎる。", la:"https://www.amazon.co.jp/s?k=GRAY+Force", lr:"https://search.rakuten.co.jp/search/mall/GRAY+Force/", ly:"https://shopping.yahoo.co.jp/search?p=GRAY+Force"}
+        ]
+    },
+    burton: {
+        title: "BURTON (バートン)",
+        items: [
+            {n:"Custom X", img:"", p:"¥107,800", e:"バートン最強の剛性。ハイスピードでもビクともしない、世界中のプロが信頼する板。", c:5, g:1, pk:4, v:"硬い！速い！強い！乗りこなせれば無敵です。", la:"https://www.amazon.co.jp/s?k=BURTON+Custom+X", lr:"https://search.rakuten.co.jp/search/mall/BURTON+Custom+X/", ly:"https://shopping.yahoo.co.jp/search?p=BURTON+Custom+X"},
+            {n:"Hometown Hero", img:"", p:"¥99,000", e:"パウダーもカービングもこなす、近年最も評価の高いフリーライドボード。", c:5, g:2, pk:3, v:"サイドカーブが深めで、カービングが想像以上にキレる。", la:"https://www.amazon.co.jp/s?k=BURTON+Hometown+Hero", lr:"https://search.rakuten.co.jp/search/mall/BURTON+Hometown+Hero/", ly:"https://shopping.yahoo.co.jp/search?p=BURTON+Hometown+Hero"},
+            {n:"Deep Thinker", img:"", p:"¥92,400", e:"ダニー・デービス監修。キレのあるターンとポップな動きを両立したディレクショナル。", c:5, g:3, pk:2, v:"ノーズの浮力とテールの粘りが最高。山全体を楽しめる。", la:"https://www.amazon.co.jp/s?k=BURTON+Deep+Thinker", lr:"https://search.rakuten.co.jp/search/mall/BURTON+Deep+Thinker/", ly:"https://shopping.yahoo.co.jp/search?p=BURTON+Deep+Thinker"},
+            {n:"Flight Attendant", img:"", p:"¥92,400", e:"どんな斜面もハイスピードで駆け抜けるために設計された、安定感抜群のモデル。", c:5, g:2, pk:2, v:"高速カービング中の安心感が抜群にいい。", la:"https://www.amazon.co.jp/s?k=BURTON+Flight+Attendant", lr:"https://search.rakuten.co.jp/search/mall/BURTON+Flight+Attendant/", ly:"https://shopping.yahoo.co.jp/search?p=BURTON+Flight+Attendant"},
+            {n:"Skeleton Key", img:"", p:"¥82,500", e:"ショート＆ワイドな設計で、狭いコースでもクイックなカービングが楽しめる。", c:4, g:2, pk:1, v:"小回りが利くし、雪面に吸い付き感覚がたまらない。", la:"https://www.amazon.co.jp/s?k=BURTON+Skeleton+Key", lr:"https://search.rakuten.co.jp/search/mall/BURTON+Skeleton+Key/", ly:"https://shopping.yahoo.co.jp/search?p=BURTON+Skeleton+Key"}
+        ]
+    }
+};
+
+const contentArea = document.getElementById('blog-content');
+Object.keys(boardData).forEach(brandKey => {
+    const brand = boardData[brandKey];
+    let html = `<section id="${brandKey}" class="brand-section"><h2 class="brand-header">${brand.title}</h2><div class="product-grid">`;
+    brand.items.forEach(item => {
+        // 画像がある場合はimgタグを表示、ない場合はテキストを表示
+        const imageContent = item.img 
+            ? `<img src="${item.img}" alt="${item.n}">` 
+            : `<div class="no-image-text">NO IMAGE / PHOTO SPACE</div>`;
+
+        html += `
+            <article class="card">
+                <div class="card-image-slot">${imageContent}</div>
+                <div class="card-header">
+                    <div class="card-title">${item.n}</div>
+                    <div class="price">参考価格：${item.p}</div>
+                </div>
+                <div class="card-body">
+                    <p class="explanation">${item.e}</p>
+                    <div class="status-box">
+                        <div class="status-row"><span>カービング</span><span class="stars">${'★'.repeat(item.c)}${'☆'.repeat(5-item.c)}</span></div>
+                        <div class="status-row"><span>グラトリ</span><span class="stars">${'★'.repeat(item.g)}${'☆'.repeat(5-item.g)}</span></div>
+                        <div class="status-row"><span>パーク</span><span class="stars">${'★'.repeat(item.pk)}${'☆'.repeat(5-item.pk)}</span></div>
+                    </div>
+                    <div class="user-voice">“${item.v}”</div>
+                </div>
+                <div class="shop-btns">
+                    <a href="${item.lr}" target="_blank" class="btn rakuten">楽天市場<span>で探す</span></a>
+                    <a href="${item.la}" target="_blank" class="btn amazon">Amazon<span>で詳細を見る</span></a>
+                    <a href="${item.ly}" target="_blank" class="btn yahoo">Yahoo!ショッピング<span>で見る</span></a>
+                </div>
+            </article>
+        `;
+    });
+    html += `</div></section>`;
+    contentArea.innerHTML += html;
+});
+</script>
+
+</body>
+</html>
